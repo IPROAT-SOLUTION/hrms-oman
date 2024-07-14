@@ -83,7 +83,7 @@
 															<a href="{{url('myPayroll/generatePayslip',$value->salary_details_id)}}" target="_blank"><button  class="btn btn-success waves-effect waves-light"><span>@lang('salary_sheet.generate_payslip')</span> </button></a>
 													</td> --}}
                                             <td> <button class="btn btn-xs btn-primary payslip"
-                                                    data-status={{ $value->salary_details_id }}>Payslip</button>
+                                                    data-status={{ $value->salary_details_id }}>@lang('payroll.payslip')</button>
                                             </td>
                                         </tr>
                                     @endforeach

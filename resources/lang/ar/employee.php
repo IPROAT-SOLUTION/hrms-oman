@@ -104,4 +104,13 @@ return [
     'employee_id' => 'هوية الموظف',
     'status' => 'حالة',
 
+
+    //newly added
+    'import_employee_info'=> 'Import employee info excel file',
+    'default_password'=> 'Default Password',
+    'template'=> 'Template',
+    'upload'=> 'Upload',
+    'employee_name' => 'Employee Name',
+    'employee_code'=> 'Employee Code',
+
 ];

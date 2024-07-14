@@ -75,21 +75,21 @@
                                             </td>
                                             <td>
                                                 {!! dateConvertDBtoForm($value->application_from_date) !!} <b>to</b> {!! dateConvertDBtoForm($value->application_to_date) !!}
-                                                <br /><span class="text-muted">Application Date :
+                                                <br /><span class="text-muted">@lang('leave.application_date'):
                                                     {!! dateConvertDBtoForm($value->application_date) !!}</span>
                                             </td>
                                             <td>{!! $value->number_of_day !!}</td>
                                             <td>
                                                 @if (isset($value->approveBy->first_name))
                                                     {!! $value->approveBy->first_name !!} {!! $value->approveBy->last_name !!}
-                                                    <br /><span class="text-muted">Approved Date :
+                                                    <br /><span class="text-muted">@lang('leave.approved_date'):
                                                         {!! dateConvertDBtoForm($value->approve_date) !!}</span>
                                                 @endif
                                             </td>
                                             <td>
                                                 @if (isset($value->rejectBy->first_name))
                                                     {!! $value->rejectBy->first_name !!} {!! $value->rejectBy->last_name !!}
-                                                    <br /><span class="text-muted">Rejected Date :
+                                                    <br /><span class="text-muted">@lang('leave.rejected_date'):
                                                         {!! dateConvertDBtoForm($value->reject_date) !!}</span>
                                                 @endif
                                             </td>
@@ -99,7 +99,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <span class="text-muted">Manager Remarks :
+                                                <span class="text-muted">@lang('leave.manager_remarks') :
                                                     @if (isset($value->manager_remarks))
                                                         {!! $value->manager_remarks !!}
                                                     @else
@@ -107,7 +107,7 @@
                                                     @endif
                                                 </span>
                                                 <br />
-                                                <span class="text-muted">HR Remarks :
+                                                <span class="text-muted">@lang('leave.hr_remarks') :
                                                     @if (isset($value->remarks))
                                                         {!! $value->remarks !!}
                                                     @else

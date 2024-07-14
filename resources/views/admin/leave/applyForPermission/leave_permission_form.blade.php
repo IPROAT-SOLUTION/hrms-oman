@@ -64,8 +64,7 @@
                             </div>
                         @endif
                         <div class="row text-center">
-                            <p class="font-bold">Every month, there are 3 permissions available, each with a duration of
-                                2 hours</p>
+                            <p class="font-bold">@lang('leave.every_month_3_permission_available_2_hours_duration')</p>
                         </div>
                         {{ Form::open(['route' => 'applyForPermission.store', 'id' => 'leavePermissionForm']) }}
                         <div class="form-body">
@@ -123,17 +122,17 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group bootstrap-timepicker">
-                                        <label for="exampleInput">From Time<span class="validateRq">*</span></label>
+                                        <label for="exampleInput">@lang('leave.from_time')<span class="validateRq">*</span></label>
                                         <input class="form-control timePicker required"
-                                            onChange = " findTimeDifference()" type="text" placeholder="From Time"
+                                            onChange = " findTimeDifference()" type="text" placeholder="@lang('leave.from_time')"
                                             name="from_time" id = "from_time" readonly>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group bootstrap-timepicker">
-                                        <label for="exampleInput">To Time <span class="validateRq">*</span></label>
+                                        <label for="exampleInput">@lang('leave.to_time') <span class="validateRq">*</span></label>
                                         <input class="form-control timePicker required"
-                                            onChange = " findTimeDifference()" type="text" placeholder="To Time"
+                                            onChange = " findTimeDifference()" type="text" placeholder="@lang('leave.to_time')"
                                             name="to_time" id = "to_time" readonly>
                                     </div>
                                 </div>
@@ -149,7 +148,7 @@
                                                 'readonly' => 'readonly',
                                                 'min' => '00:10',
                                                 'max' => '02:00',
-                                                'placeholder' => __('common.permission_duration'),
+                                                'placeholder' => __('leave.permission_duration'),
                                             ],
                                         ) !!}
                                     </div>

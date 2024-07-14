@@ -13,7 +13,7 @@ return [
     'select_designation' => 'Select Designation',
     'select_role' => 'Select Role',
     'photo' => 'Photo',
-    'name' => 'Name',
+    
     'profile' => 'Profile',
     'department' => 'Department',
     'phone' => 'Phone',
@@ -113,6 +113,18 @@ return [
     'hr' => 'HR',
     'nationality' => 'Nationality',
     'operation_manager' => 'Manager',
-    'mobile_attendance'=>'Mobile Attendance'
+    'mobile_attendance'=>'Mobile Attendance',
+
+
+    //newly added
+    'import_employee_info'=> 'Import employee info excel file',
+    'default_password'=> 'Default Password',
+    'template'=> 'Template',
+    'upload'=> 'Upload',
+    'employee_name' => 'Employee Name',
+    'employee_code'=> 'Employee Code',
+
+
+
 
 ];

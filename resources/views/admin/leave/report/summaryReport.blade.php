@@ -120,7 +120,7 @@
                                     @endforeach
                                 </p>
                             </div>
-                            <p class="font-bold text-center">Month {{ "($from_date to $to_date)" }}</p>
+                            <p class="font-bold text-center">@lang('common.month') {{ "($from_date to $to_date)" }}</p>
                         </div>
 
                         <div class="table-responsive">
@@ -128,10 +128,10 @@
                                 <thead class="tr_header">
                                     <tr>
                                         <th class="col-md-1 text-center">@lang('common.month')</th>
-                                        <th class="text-center">{{ 'Employee ID' }}</th>
-                                        <th class="text-center">{{ 'Name' }}</th>
-                                        <th class="text-center">{{ 'Department' }}</th>
-                                        <th class="text-center">{{ 'Designation' }}</th>
+                                        <th class="text-center">@lang('employee.employee_id')</th>
+                                        <th class="text-center">@lang('leave.employee_name')</th>
+                                        <th class="text-center">@lang('leave.department')</th>
+                                        <th class="text-center">@lang('leave.designation')</th>
                                         @foreach ($leaveTypes as $leaveType)
                                             <th class="col-md-1 text-center">{{ acronym($leaveType->leave_type_name) }}
                                             </th>

@@ -111,7 +111,7 @@
                                         <th>@lang('leave.applied_date')</th>
                                         <th>@lang('leave.request_duration')</th>
                                         <th>@lang('leave.approve_by')</th>
-                                        <th>@lang('leave.approve_date')</th>
+                                        <th>@lang('leave.approved_date')</th>
                                         <th>@lang('leave.purpose')</th>
                                         <th>@lang('leave.manager_remarks')</th>
                                         <th>@lang('leave.hr_remarks')</th>

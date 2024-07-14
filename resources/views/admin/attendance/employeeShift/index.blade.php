@@ -49,7 +49,7 @@
                             style="border: 1px solid #EFEEEF; border-radius:4px;margin:2px;padding:20px 0 0 0;margin-bottom:32px;">
                             <p class="border" style="margin-left:30px">
                                 <span><i class="fa fa-upload"></i></span>
-                                <span style="margin-left: 4px"><b>Upload Document Here (.xlsx).</b></span>
+                                <span style="margin-left: 4px"><b>@lang('attendance.import_shift_details')</b></span>
                             </p>
                             <form class="col-md-8" action="{{ route('shiftDetails.import') }}" method="post"
                                 enctype="multipart/form-data">
@@ -67,7 +67,7 @@
                                     <div class="col-md-1">
                                         <button class="btn btn-success btn-sm" style="margin-top: 1px;width:90px"
                                             type="submit"><span><i class="fa fa-upload" aria-hidden="true"></i></span>
-                                            Upload</button>
+                                            @lang('employee.upload')</button>
                                     </div>
                                 </div>
                             </form>
@@ -77,7 +77,7 @@
                                 <button class="col-md-1 btn btn-info btn-sm pull-right waves-effect waves-light"
                                     type="submit" style="margin-top: 2px;width: 100px;">
                                     <i class="fa fa-download" style="margin-right: 2px;" aria-hidden="true"></i><span>
-                                        Template</span>
+                                    @lang('employee.template')</span>
                                 </button>
                                 <div class="col-md-2 form-group pull-right" style="width: 120px;">
                                     <input class="form-control monthField" style="height: 32px;background:#fff" required
@@ -102,7 +102,7 @@
                                 <button class="btn btn-info btn-sm col-md-2 waves-effect waves-light" value="Filter"
                                     type="submit" style="margin-top: 1px;margin-right: 10px;width:84px;">
                                     <i class="fa fa-download" aria-hidden="true"></i><span>
-                                        {{ 'Filter' }}</span>
+                                    @lang('common.filter')</span>
                                 </button>
                             </form>
                             {{-- @if (isset($yearAndMonth))
@@ -120,8 +120,8 @@
                                 <thead>
                                     <tr class="tr_header">
                                         <th>@lang('common.serial')</th>
-                                        <th>EMP.ID</th>
-                                        <th>MONTH</th>
+                                        <th>@lang('employee.employee_id')</th>
+                                        <th>@lang('common.month')</th>
                                         <th>01</th>
                                         <th>02</th>
                                         <th>03</th>

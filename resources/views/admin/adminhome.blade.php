@@ -145,7 +145,7 @@ use App\Model\Device;
         </div>
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box analytics-info">
-                <h3 class="box-title"> leave</h3>
+                <h3 class="box-title"> @lang('dashboard.leave')</h3>
                 <ul class="list-inline two-part">
                     <li>
                         <img class="dash_image" src="{{ asset('admin_assets/img/department.png') }}">
@@ -170,12 +170,12 @@ use App\Model\Device;
                             <table class="table table-hover table-borderless">
                                 <thead>
                                     <tr>
-                                        <th class="text-left" style="width:100px;">Sl.No</th>
+                                        <th class="text-left" style="width:100px;">@lang('dashboard.s.no')</th>
                                         <th class="text-left" style="width:150px;">@lang('dashboard.photo')</th>
-                                        <td class="text-left" style="width:150px;">Employee ID</td>
-                                        <td class="text-left">Employee Name</td>
-                                        <td class="text-left">Date-Time</td>
-                                        <td class="text-left">Device</td>
+                                        <th class="text-left" style="width:150px;">@lang('dashboard.employee_id')</th>
+                                        <th class="text-left">@lang('dashboard.employee_name')</th>
+                                        <th class="text-left">@lang('dashboard.date_time')</th>
+                                        <th class="text-left">@lang('dashboard.device')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -227,7 +227,7 @@ use App\Model\Device;
 
             <div class="col-md-6">
                 <div class="white-box">
-                    <h3 class="box-title">Hey {!! $logged_user[0]->user_name !!} please Check in/out your attendance</h3>
+                    <h3 class="box-title">Hey {!! $logged_user[0]->user_name !!} @lang('dashboard.please_check_in_out_your_attendance')</h3>
                     <hr>
                     <div class="noticeBord">
                         @if (session()->has('success'))
@@ -257,12 +257,12 @@ use App\Model\Device;
                             @if ($count_user_login_today > 0 && $count_user_login_today % 2 != 0)
                                 <button class="btn btn-danger">
                                     <i class="fa fa-clock-o"> </i>
-                                    Check Out
+                                    @lang('dashboard.check_out')
                                 </button>
                             @else
                                 <button class="btn btn-success">
                                     <i class="fa fa-clock-o"> </i>
-                                    Check In
+                                    @lang('dashboard.check_in')
                                 </button>
                             @endif
                         </form>
@@ -298,7 +298,7 @@ use App\Model\Device;
                                         <h5>{{ $leaveApplication->employee->first_name }}
                                             {{ $leaveApplication->employee->last_name }}
                                         </h5><span class="time">{{ date(' d M Y h:i: a', $d) }}</span> <span
-                                            class="label label-rouded label-info">PENDING</span>
+                                            class="label label-rouded label-info">@lang('dashboard.pending')</span>
                                         <br /><span class="mail-desc" style="max-height: none">
                                             @lang('leave.leave_type') :
                                             {{ $leaveApplication->leaveType->leave_type_name }}<br>
@@ -321,7 +321,7 @@ use App\Model\Device;
                                                     </i>
                                                 </a>
                                             @else
-                                                <span class="text-warning">No document</span>
+                                                <span class="text-warning">@lang('dashboard.no_document')</span>
                                             @endif
                                         </span>
 
@@ -370,7 +370,7 @@ use App\Model\Device;
         @if (count($permissionApplication) > 0)
             <div class="col-md-6">
                 <div class="white-box">
-                    <h3 class="box-title">Recent Permission Requests</h3>
+                    <h3 class="box-title">@lang('dashboard.recent_permission_requests')</h3>
                     <hr>
                     <div class="leaveApplication">
                         @foreach ($permissionApplication as $leaveApplication)
@@ -445,7 +445,7 @@ use App\Model\Device;
         @if (count($employeeDocumentExpiry) > 0)
             <div class="col-md-6">
                 <div class="white-box">
-                    <h3 class="box-title">Employee Document Expire Soon List</h3>
+                    <h3 class="box-title">@lang('dashboard.employee_document_expire_soon_list')</h3>
                     <hr>
                     <div style="height: 210px; overflow-y: auto; overflow-x: hidden;">
 
@@ -520,7 +520,7 @@ use App\Model\Device;
         @if (count($employeeDocumentExpired) > 0)
             <div class="col-md-6">
                 <div class="white-box">
-                    <h3 class="box-title">Employee Document Expired List</h3>
+                    <h3 class="box-title">@lang('dashboard.employee_document_expired_list')</h3>
                     <hr>
                     <div style="height: 210px; overflow-y: auto; overflow-x: hidden;">
 
@@ -706,7 +706,7 @@ use App\Model\Device;
                                             class="fa fa-flag-checkered text-info"></i></div>
                                     <div class="mail-contnet">
                                         <h5 class="text-danger">{{ substr($row->title, 0, 70) }}..</h5><span
-                                            class="time">Published Date:
+                                            class="time">@lang('dashboard.published_date'):
                                             {{ date(' d M Y ', $noticeDate) }}</span>
                                         <br /><span class="mail-desc">
                                             @lang('notice.published_by'): {{ $row->createdBy->first_name }}

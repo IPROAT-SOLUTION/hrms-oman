@@ -54,13 +54,13 @@
                             style="border: 1px solid #b9b8b5; border-radius: 4px; margin: 12px; padding: 12px">
                             <form action="{{ route('weeklyHoliday.weeklyHolidayTemplate') }}" method="GET">
                                 <div class="pull-right" style="padding-top:25px;">
-                                    <input id="template1" class="btn btn-info btn-sm template1" value="Template"
+                                    <input id="template1" class="btn btn-info btn-sm template1" value="@lang('employee.template')"
                                         type="submit">
                                 </div>
 
                                 <div class="col-md-2 pull-right">
                                     <div class="form-group">
-                                        <label for="exampleInput">Month<span class="validateRq">*</span>:</label>
+                                        <label for="exampleInput">@lang('holiday.month')<span class="validateRq">*</span>:</label>
                                         <input type="text" class="form-control month" placeholder="@lang('common.month')"
                                             id="month" name="month"
                                             value="@if (isset($month)) {{ monthConvertFormtoDB($month) }}@else {{ monthConvertFormtoDB(date('Y-m')) }} @endif"
@@ -72,7 +72,7 @@
                             <div class="row hidden-xs hidden-sm">
                                 <p class="border" style="margin-left: 18px">
                                     <span><i class="fa fa-upload"></i></span>
-                                    <span style="margin-left: 4px"> Import weekly holiday excel file.</span>
+                                    <span style="margin-left: 4px">@lang('holiday.import_weekly_holiday')</span>
                                 </p>
 
                                 <form action="{{ route('weeklyHoliday.import') }}" method="post"
@@ -86,7 +86,7 @@
                                             </div>
                                             <div class="col-sm-1">
                                                 <button class="btn btn-success btn-sm" type="submit">
-                                                    <span><i class="fa fa-upload" aria-hidden="true"></i></span>Upload
+                                                    <span><i class="fa fa-upload" aria-hidden="true"></i></span> @lang('holiday.upload')
                                                 </button>
                                             </div>
                                         </div>
@@ -102,11 +102,11 @@
                                 <thead class="tr_header">
                                     <tr>
                                         <th>@lang('common.serial')</th>
-                                        <th>Employee ID</th>
+                                        <th>@lang('dashboard.employee_id')</th>
                                         <th>@lang('holiday.weekly_holiday_name')</th>
                                         <th>@lang('common.month')</th>
                                         <th>@lang('common.date')</th>
-                                        <th>Updated At</th>
+                                        <th>@lang('holiday.updated_at')</th>
                                         {{-- <th>@lang('common.status')</th> --}}
                                         <th style="text-align: center;">@lang('common.action')</th>
                                     </tr>

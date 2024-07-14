@@ -44,8 +44,10 @@
                                             <th>@lang('leave.permissiom_duration')</th>
                                             <th>@lang('leave.request_date')</th>
                                             <th>@lang('leave.purpose')</th>
-                                            <th>Manager Status</th>
-                                            <th>Hr Status</th>
+                                            
+                                        <th>@lang('common.managerstatus')</th>
+                                        <th>@lang('common.headdepartmentstatus')</th>
+                                           
                                             <th>@lang('common.action')</th>
                                         </tr>
                                     </thead>
@@ -86,7 +88,8 @@
                                                         </td>
                                                     @elseif($value->manager_status == 3)
                                                         <td style="width: 100px;">
-                                                            <span class="label label-danger">Manager Rejected</span>
+                                                            <span class="label label-danger">@lang('leave.manager_rejected
+                                                                 ')</span>
                                                         </td>
                                                     @else
                                                         <td style="width: 100px;">

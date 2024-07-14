@@ -1,4 +1,4 @@
-@php
+d@php
 $front_setting = getFrontData();
 @endphp
 @extends('front.master')

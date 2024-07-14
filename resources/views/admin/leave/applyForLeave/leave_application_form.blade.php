@@ -78,7 +78,7 @@
 
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <label for="exampleInput">Total Leave Taken (days)<span
+                                        <label for="exampleInput">@lang('leave.total_leave_taken')<span
                                                 class="validateRq">*</span></label>
                                         {!! Form::text(
                                             '',
@@ -99,7 +99,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-3 doc_upload">
-                                    <label class="form-label" for="customFile">Upload Document<span
+                                    <label class="form-label" for="customFile">@lang('leave.upload_document')<span
                                             class="validateRq">*</span></label>
                                     <input type="file" class="form-control required" id="document"
                                         name="document" />
@@ -157,8 +157,7 @@
                                 <div class="col-md-3 half_day_section normal-section">
                                     <div class="form-group">
                                         <label for="exampleInput"
-                                            title="{{ PHP_EOL }}1 will be 0.5 day,{{ PHP_EOL }}2 will be 1.5 days{{ PHP_EOL }}if select @lang('leave.half_day')">Leave
-                                            Day
+                                            title="{{ PHP_EOL }}1 will be 0.5 day,{{ PHP_EOL }}2 will be 1.5 days{{ PHP_EOL }}if select @lang('leave.half_day')"> @lang('leave.leave_day')
                                             <i class="fa fa-exclamation-circle"></i></label>
                                         {{ Form::select(
                                             'half_day',

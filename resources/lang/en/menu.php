@@ -131,5 +131,6 @@ return [
     'add_social_security'                => 'Add Social Security',
     'add_advance_deduction'                => 'Add Advance',
     'advance_deduction_log'                => 'Log',
+    
 
 ];

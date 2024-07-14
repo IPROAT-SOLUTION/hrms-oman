@@ -86,4 +86,10 @@ return [
   'wh' => 'WH',
   'muster_attendance' => 'Muster Attendance',
   'permission_duration' => 'Permission Duration',
+
+  //newly added
+  'import_shift_details'=> 'Import Shift Details Excel File.',
+  'datetime'=> 'DateTime',
+  'in_out'=> 'In/Out',
+ 
 ];

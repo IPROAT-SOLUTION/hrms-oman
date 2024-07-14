@@ -33,7 +33,7 @@ return [
     'my_leave_report' => 'My Leave Report',
     'applied_date' => 'تاريخ التطبيق',
     'approve_by' => 'تمت الموافقة عليه من قبل',
-    'approve_date' => 'تاريخ الموافقة',
+    'approved_date' => 'تاريخ الموافقة',
     'reject_date' => 'تاريخ الرفض',
     'purpose' => 'غاية',
     'number_of_days' => 'عدد الأيام',
@@ -79,5 +79,40 @@ return [
     'remark' => 'ملاحظات',
     'shift_change_request_duration' => 'مدة الطلب',
     'on_duty_request_duration' => 'مدة الطلب',
+
+
+    //newly added
+    'nationality'              => 'Nationality',
+    'religion'                 => 'Religion',
+    'created_by'               => 'Created By',
+    'rejected_date' => 'Rejected Date',
+    'application_date'            => 'Application Date',
+    'manager_remarks'          => 'Manager Remarks',
+    'hr_remarks'               => 'HR Remarks',
+    'total_leave_taken'=> 'Total Leave Taken (days)',
+    'upload_document'=> 'Upload Document',
+    'leave_day'=> 'Leave Day',
+    'department'                  => 'Department',
+    'designation'=> 'Designation',
+    'from_time' => 'Form Time',
+    'to_time' => 'To Time',
+   
+    'every_month_3_permission_available_2_hours_duration'=> 'Every month, there are 3 permissions available, each with a duration of
+                                2 hours',
+    'import_leave_balance'=> 'Import Leave Balance excel file.',
+    'manager_rejected'=> 'Manager Rejected',    
+  
+      'requested_application_details'=> 'Requested Application Details',
+      'application_details'=> 'Application Details',
+      'employee_leave_application_details'=> 'Employee Leave Application Details',
+      'total_days'=> 'Total Days',
+      'leave_taken'=> 'Leave Taken',
+      'available_days'=> 'Avaliable Days',
+      'applied_on'=> 'Applied On',
+      'period'=> 'Period',
+      'leave_approval'=> 'Leave Approval',
+      'reject'=> 'Reject',
+      'approve'=> 'Approve',
+      
 
 ];

@@ -142,10 +142,10 @@
                                 <p>
                                     <span class="bg-success text-success"
                                         style="padding: 2px 4px;margin:0 4px;">Color</span><span
-                                        class="text-dark">Employee Contribution,</span>
+                                        class="text-dark">@lang('socialSecurity.percentage'),</span>
                                     <span class="bg-info text-info"
                                         style="padding: 2px 4px;margin:0 4px;">Color</span><span
-                                        class="text-dark">Employer Contribution</span>
+                                        class="text-dark">@lang('socialSecurity.employer_percentage')</span>
                                 </p>
 
                             </div>

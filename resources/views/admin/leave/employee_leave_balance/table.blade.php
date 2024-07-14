@@ -53,13 +53,13 @@
                                     <div id="template1" class="btn btn-info btn-sm template1" value="Template"
                                         type="submit">
                                         <i class="fa fa-download" aria-hidden="true"></i><span>
-                                            Template</span>
+                                        @lang('employee.template')</span>
                                     </div>
                                 </a>
                                 <div class="row hidden-xs hidden-sm">
                                     <p class="border" style="margin-left:18px">
                                         <span><i class="fa fa-upload"></i></span>
-                                        <span style="margin-left: 4px"> Import Leave Balance excel file.</span>
+                                        <span style="margin-left: 4px"> @lang('leave.import_leave_balance')</span>
                                     </p>
                                     <form action="{{ route('leaveBalance.import') }}" method="post"
                                         enctype="multipart/form-data">
@@ -73,7 +73,7 @@
                                                 <div class="col-sm-1">
                                                     <button class="btn btn-success btn-sm" type="submit"><span><i
                                                                 class="fa fa-upload" aria-hidden="true"></i></span>
-                                                        Upload</button>
+                                                                @lang('employee.upload')</button>
                                                 </div>
                                             </div>
 

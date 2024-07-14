@@ -128,11 +128,11 @@
                                 <thead class="tr_header">
                                     <tr>
                                         <th style="width:80px;">@lang('common.serial')</th>
-                                        <th>Employee Id</th>
-                                        <th>@lang('common.name')</th>
-                                        <th>DateTime</th>
-                                        <th>In/Out</th>
-                                        <th>Device Name</th>
+                                        <th>@lang('employee.employee_id')</th>
+                                        <th>@lang('employee.employee_name')</th>
+                                        <th>@lang('attendance.datetime')</th>
+                                        <th>@lang('attendance.in_out')</th>
+                                        <th>@lang('attendance.device_name')</th>
                                     </tr>
                                 </thead>
                                 <tbody>

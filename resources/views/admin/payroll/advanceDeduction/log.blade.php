@@ -1,7 +1,7 @@
 @extends('admin.master')
 @section('content')
 @section('title')
-    Advance Deduction Logs
+    @lang('advancededuction.advance_deduction_log') 
 @endsection
 
 <div class="container-fluid">
@@ -54,11 +54,11 @@
                                         <th>@lang('common.serial')</th>
                                         <th>@lang('employee.name')</th>
                                         <th>@lang('advancededuction.advance_amount')</th>
-                                        <th>Reason</th>
-                                        <th>Payment Type</th>
-                                        <th>Paid Amount</th>
-                                        <th>Created by/ Updated By / Deleted By</th>
-                                        <th>Created At</th>
+                                        <th>@lang('advancededuction.reason')</th>
+                                        <th>@lang('advancededuction.payment_type')</th>
+                                        <th>@lang('advancededuction.paid_amount')</th>
+                                        <th>@lang('advancededuction.created_updated_deleted_by')</th>
+                                        <th>@lang('advancededuction.created_at')</th>
 
 
                                     </tr>

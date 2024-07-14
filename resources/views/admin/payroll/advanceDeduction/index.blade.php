@@ -58,10 +58,10 @@
                                         <th>@lang('advancededuction.date_of_advance_given')</th>
                                         <th>@lang('advancededuction.deduction_amouth_per_month')</th>
                                         <th>@lang('advancededuction.no_of_month_to_be_deducted')</th>
-                                        <th>Month of Completion</th>
-                                        <th>Payment Type</th>
-                                        <th>Paid Amount</th> 
-                                        <th>Pending Amount</th>
+                                        <th>@lang('advancededuction.month_of_completion')</th>
+                                        <th>@lang('advancededuction.payment_type')</th>
+                                        <th>@lang('advancededuction.paid_amount')</th> 
+                                        <th>@lang('advancededuction.pending_amount')</th>
                                         <th>@lang('common.status')</th>
                                         <th>@lang('common.action')</th>
                                     </tr>

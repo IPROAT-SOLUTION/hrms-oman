@@ -82,4 +82,10 @@ return [
   'incentive' => 'حافز',
   'total_duration'=> 'المدة الإجمالية',
   'remarks'=> 'ملاحظات',
+
+   //newly added
+   'import_shift_details'=> 'Import Shift Details Excel File.',
+   'datetime'=> 'DateTime',
+   'in_out'=> 'In/Out',
+
 ];

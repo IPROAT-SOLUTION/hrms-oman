@@ -105,4 +105,9 @@ return [
     'send_application' => 'إرسال التطبيق',
     'datetime' => '  التاريخ الوقت',
 
+
+    'managerstatus' => "Manager Status",
+    'headdepartmentstatus' => "HR Status",
+    'title' => "Title",
+
 ];

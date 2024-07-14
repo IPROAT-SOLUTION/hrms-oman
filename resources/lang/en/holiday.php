@@ -22,4 +22,11 @@ return [
     'end_date' => 'End Date',
     'comment' => 'Comment',
 
+    // newly added
+    'month'=> 'Month',
+    'import_weekly_holiday'=> 'Import weekly holiday excel file.',
+    'upload'=> 'Upload',
+    'updated_at'=> 'Updated At',
+    
+
 ];

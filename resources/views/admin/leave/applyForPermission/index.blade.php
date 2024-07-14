@@ -45,10 +45,10 @@
                                     <tr>
                                         <th>#</th>
                                         <th>@lang('common.employee_name')</th>
-                                        <th>Permission Duration</th>
+                                        <th>@lang('leave.permission_duration')</th>
                                         <th>@lang('leave.date')</th>
-                                        <th>From Time</th>
-                                        <th>To Time</th>
+                                        <th>@lang('leave.from_time')</th>
+                                        <th>@lang('leave.to_time')</th>
                                         <th>@lang('leave.approved_permission_count')</th>
                                         <th>@lang('leave.remarks')</th>
                                         <th>@lang('common.headdepartmentstatus')</th>

@@ -46,8 +46,8 @@
                                         <th>@lang('leave.number_of_day')</th>
                                         <th style="width: 200px;">@lang('leave.purpose')</th>
                                         <th>@lang('leave.document')</th>
-                                        <th>Manager Status</th>
-                                        <th>HR Status</th>
+                                        <th>@lang('common.managerstatus')</th>
+                                        <th>@lang('common.headdepartmentstatus')</th>
                                         <th>@lang('common.action')</th>
                                     </tr>
                                 </thead>
@@ -112,7 +112,7 @@
                                         </td>
                                         @elseif($value->manager_status == 3)
                                         <td style="width: 100px;">
-                                            <span class="label label-danger">Manager Rejected</span>
+                                            <span class="label label-danger">@lang('leave.manager_rejected')</span>
                                         </td>
                                         @else
                                         <td style="width: 100px;">

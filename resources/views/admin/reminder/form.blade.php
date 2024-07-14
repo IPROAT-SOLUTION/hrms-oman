@@ -1,13 +1,14 @@
 @extends('admin.master')
 @section('content')
 
-    <?php
-    if (isset($editModeData)) {
-        $title = 'Edit Office Management';
-    } else {
-        $title = 'Add Office Management';
-    }
-    ?>
+<?php
+if (isset($editModeData)) {
+    $title = __('setting.edit_office_management');
+} else {
+    $title = __('setting.add_office_management');
+}
+?>
+
 
     <div class="container-fluid">
         <div class="row bg-title">
@@ -22,7 +23,7 @@
             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                 <a href="{{ route('reminder.index') }}"
                     class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light"><i
-                        class="fa fa-list-ul" aria-hidden="true"></i> Office Management Details</a>
+                        class="fa fa-list-ul" aria-hidden="true"></i>@lang('setting.office_management_details')</a>
             </div>
         </div>
         <div class="row">
@@ -71,7 +72,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="control-label col-md-4">Expiry Date<span
+                                            <label class="control-label col-md-4">@lang('setting.expiry_date')<span
                                                     class="validateRq">*</span></label>
                                             <div class="col-md-8">
                                                 {!! Form::text(
@@ -90,7 +91,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="control-label col-md-4">Content <span
+                                            <label class="control-label col-md-4">@lang('setting.content') <span
                                                     class="validateRq">*</span></label>
                                             <div class="col-md-8">
                                                 <textarea class="form-control" rows="6" name="content">
@@ -107,7 +108,7 @@
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label class="control-label col-md-4">Upload Document<span
+                                            <label class="control-label col-md-4">@lang('setting.upload_document')<span
                                                     class="validateRq">*</span></label>
                                             <div class="col-md-8">
                                                 {!! Form::file(
@@ -116,7 +117,7 @@
                                                     $attributes = ['class' => 'form-control required file', 'id' => 'file'],
                                                 ) !!}
                                                 <br>
-                                                <p><small><i>Allowed file extensions: jpeg, jpg, png, pdf</i></small></p>
+                                                <p><small><i>@lang('setting.allowed_extensions')</i></small></p>
                                             </div>
 
                                             <hr>

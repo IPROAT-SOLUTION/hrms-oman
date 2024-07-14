@@ -9,8 +9,8 @@
                 <th>@lang('socialSecurity.branch')</th>
                 <th>@lang('socialSecurity.department')</th>
                 <th>@lang('socialSecurity.designation')</th>
-                <th>Employee Contribution</th>
-                <th>Employer Contribution</th>
+                <th>@lang('socialSecurity.percentage')</th>
+                <th>@lang('socialSecurity.employer_percentage')</th>
             </tr>
         </thead>
         <tbody>

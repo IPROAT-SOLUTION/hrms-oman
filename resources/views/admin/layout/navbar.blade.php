@@ -2,42 +2,32 @@
     <div class="navbar-header">
 
         <ul class="nav navbar-top-links navbar-left">
-
-            <li><a href="javascript:void(0)" class="open-close waves-effect waves-light menuIcon"><i
-                        class="ti-menu tiMenu"></i></a>
+            <li><a href="javascript:void(0)" class="open-close waves-effect waves-light"><i class="ti-menu tiMenu"></i></a>
             </li>
-            <ul class="nav navbar-top-links navbar-right pull-right hidden-xs">
 
-                <li><a href="javascript:void(0)" class="open-close waves-effect waves-light"><i
-                            class="ti-menu tiMenu"></i></a>
-                </li>
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"
-                        style="color:#fff"> {{ App::getLocale() }}
-                        <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                    </a>
-                    <ul class="dropdown-menu mailbox animated bounceInDown">
-                        <li>
-                            <div class="drop-title">@lang('common.chose_a_language')</div>
-                        </li>
-                        <li>
-                            <div class="message-center">
-                                <a href="{{ url('local/en') }}">
-                                    <h5>English</h5>
-                                </a>
-                            </div>
-                            <div class="message-center">
-                                <a href="{{ url('local/ar') }}" title="Spanish">
-                                    <h5>Arabic</h5>
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-            </ul>
-
+            <li class="dropdown">
+                <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" style="color:#fff"> {{ App::getLocale() }}
+                    <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+                </a>
+                <ul class="dropdown-menu mailbox animated bounceInDown">
+                    <li>
+                        <div class="drop-title">@lang('common.chose_a_language')</div>
+                    </li>
+                    <li>
+                        <div class="message-center">
+                            <a href="{{ url('local/en') }}">
+                                <h5>English</h5>
+                            </a>
+                        </div>
+                        <div class="message-center">
+                            <a href="{{ url('local/ar') }}" title="Spanish">
+                                <h5>Arabic</h5>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- /.dropdown-messages -->
+            </li>
         </ul>
 
         <ul class="nav navbar-top-links navbar-right pull-right imageIcon">

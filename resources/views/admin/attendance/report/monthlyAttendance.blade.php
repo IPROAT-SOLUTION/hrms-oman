@@ -136,12 +136,12 @@
                                     $serial = null;
                                     ?>
                                     <tr>
-                                        <td>Employee Name:</td>
+                                        <td>@lang('employee.employee_name'):</td>
                                         <td>
                                             <b>{{ $result[0]['fullName'] ?? '' }}</b>
                                         </td>
                                         <td></td>
-                                        <td> Department:</td>
+                                        <td> @lang('employee.department'):</td>
                                         <td>
                                             <b>{{ $result[0]['department_name'] ?? '' }}</b>
                                         </td>
@@ -151,12 +151,12 @@
                                         <td></td>
                                     </tr>
                                     <tr>
-                                        <td>Employee Code:</td>
+                                        <td>@lang('employee.employee_code'):</td>
                                         <td>
                                             <b>{{ $result[0]['finger_print_id'] ?? '' }}</b>
                                         </td>
                                         <td></td>
-                                        <td>Designation:</td>
+                                        <td>@lang('employee.designation'):</td>
                                         <td>
                                             <b>{{ $result[0]['designation_name'] ?? '' }}</b>
                                         </td>

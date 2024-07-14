@@ -60,8 +60,8 @@
                                         <th>@lang('advancededuction.paid_amount')</th>
                                         <th>@lang('advancededuction.pending_amount')</th>
                                         <th>@lang('advancededuction.remaining_month')</th>
-                                        <th>Payment Type</th>
-                                        <th>Payment Date</th>
+                                        <th>@lang('advancededuction.payment_type')</th>
+                                        <th>@lang('advancededuction.payment_date')</th>
                                         {{-- <th>@lang('common.status')</th> --}}
                                         <th>@lang('common.action')</th>
                                     </tr>

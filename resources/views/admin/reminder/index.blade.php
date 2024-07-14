@@ -13,18 +13,18 @@
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 		   <ol class="breadcrumb">
 				<li class="active breadcrumbColor"><a href="{{ url('dashboard') }}"><i class="fa fa-home"></i> @lang('dashboard.dashboard')</a></li>
-				<li>Office Management Details</li>
+				<li>@lang('setting.office_management_details')</li>
 			</ol>
 		</div>	
 		<div class="col-lg-8 col-sm-8 col-md-8 col-xs-12">
-			<a href="{{ route('reminder.create') }}"  class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light"> <i class="fa fa-plus-circle" aria-hidden="true"></i> Add office Management</a>
+			<a href="{{ route('reminder.create') }}"  class="btn btn-success pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light"> <i class="fa fa-plus-circle" aria-hidden="true"></i>@lang('setting.add_office_management')</a>
 		</div>	
 	</div>
                 
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="panel panel-info">
-				<div class="panel-heading"><i class="mdi mdi-table fa-fw"></i> Office Management Details</div>
+				<div class="panel-heading"><i class="mdi mdi-table fa-fw"></i> @lang('setting.office_management_details')</div>
 				<div class="panel-wrapper collapse in" aria-expanded="true">
 					<div class="panel-body">
 						@if(session()->has('success'))
@@ -44,9 +44,9 @@
 								<thead>
 									 <tr class="tr_header">
                                         <th>@lang('common.serial')</th>
-                                        <th>Title</th>
-                                        <th>Expiry Date</th>
-                                        <th>Expire Day(s)</th>
+                                        <th>@lang('setting.title')</th>
+                                        <th>@lang('setting.expiry_date')</th>
+                                        <th>@lang('setting.expiry_day')</th>
                                         <th style="text-align: center;">@lang('common.action')</th>
                                     </tr>
 								</thead>

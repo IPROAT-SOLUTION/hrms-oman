@@ -42,6 +42,7 @@ return [
     'my_attendace_report'              => 'حضوري',
     'summary_report'                   => 'ملخص',
     'manual_attendance'                => 'الحضور اليدوي',
+    
     'payroll'                          => 'Payroll',
     'tax_rule_setup'                   => 'Tax Rule Setup',
     'late_configration'                => 'Late Configration',
@@ -119,4 +120,31 @@ return [
     'shift_application'                => 'Shift Application',
     'onduty_application'               => 'في فترة تطبيق المناوبه',
     'shift_request'                    => 'Shift Request',
+
+    
+    'permission_report'                     => 'Permission Report',
+    'onduty_report'                     => 'Onduty Report',
+    'muster_report'                   => 'Muster Report',
+   
+    'req_permission_application'         => 'Requested Permissions',
+    'apply_for_onduty'         => 'Apply For OnDuty',
+    'req_onduty_application'         => 'Requested OnDuties',
+    'reminder'                         => 'Office Management',
+    'office_management'                         => 'Office Management',
+    'reminder_add'                     => 'Add',
+    'reminder_details'                 => 'Details',
+    'reminder_expired_details'         => 'Expired Details',
+    'reminder_settings'                => 'Mail Settings',
+    'leave_balance'                => 'Leave Balance',
+    // 'wpms'                => 'WPMS Configure',
+    'wpms'                => 'WPMS',
+    'social_security'                => 'Social Security',
+    'summary'                => 'Summary',
+    'add_social_security'                => 'Add Social Security',
+    'add_advance_deduction'                => 'Add Advance',
+    'advance_deduction_log'                => 'Log',
+    
+
 ];
+
+

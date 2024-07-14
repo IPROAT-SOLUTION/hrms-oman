@@ -22,4 +22,10 @@ return [
     'end_date' => 'تاريخ الانتهاء',
     'comment' => 'تعليق',
 
+     // newly added
+     'month'=> 'Month',
+     'import_weekly_holiday'=> 'Import weekly holiday excel file.',
+     'upload'=> 'Upload',
+     'updated_at'=> 'Updated At',
+
 ];

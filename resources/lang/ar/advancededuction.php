@@ -4,6 +4,7 @@ return [
 
     'advancededuction_list' => 'Advance Deduction List',
     'advancededuction_name' => 'Advance Deduction Name',
+    'name' => 'Deduction Name',
     'advancededuction_amount' => 'Advance Deduction Amount',
     'advancededuction_type' => 'Advance Deduction Type',
     'percentage_of_basic' => 'Percentage of Basic',
@@ -13,11 +14,24 @@ return [
     'view_advancededuction' => 'View Advance Deduction',
     'advance_amount' => 'Advance Amount',
     'date_of_advance_given' => 'Date of Advance Given',
-    'deduction_amouth_per_month' => 'Detuction Amouth Per Month',
+    'deduction_amouth_per_month' => 'Deduction Amouth Per Month',
     'no_of_month_to_be_deducted' => 'No of Month To Be Deducted',
     'remaining_months' => 'Remaining Months',
     'remaining_month' => 'Remaining Month',
     'action' => 'Action',
     'balance' => 'Balance',
+    'add_advance' => 'Add Advance',
+    'edit_advance' => 'Edit Advance',
+    'view_advance' => 'View Advance',
+    'pending_amount' => 'Pending Amount',
+    'paid_amount' => 'Paid Amount',
+    'payment_type' => 'Payment Type',
+    'month_of_completion' => 'Month Of Completion',
+    'payment_date' => 'Payment Date',
+    'advance_deduction_log'=> 'Advance Deduction Logs',
+    'reason'=> 'Reason',
+    'created_updated_deleted_by'=> 'Created by/ Updated By / Deleted By',
+    'created_at'=> 'Created At',
+    
 
 ];

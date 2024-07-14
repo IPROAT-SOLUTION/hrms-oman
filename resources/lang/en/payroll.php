@@ -46,4 +46,7 @@ return [
     'total_earnings'=>'Total Earnings',
     'total_deductions'=>'Total Deductions',
     'arrear_adjustment'=>'Arrear Adjustment',
+
+    'import_salary_document_here'=> 'Upload Document Here (.xlsx).',
+    'payslip'=> 'Payslip',
 ];

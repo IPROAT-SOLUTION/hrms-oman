@@ -25,5 +25,13 @@ return [
     'view_advance' => 'View Advance',
     'pending_amount' => 'Pending Amount',
     'paid_amount' => 'Paid Amount',
+    'payment_type' => 'Payment Type',
+    'month_of_completion' => 'Month Of Completion',
+    'payment_date' => 'Payment Date',
+    'advance_deduction_log'=> 'Advance Deduction Logs',
+    'reason'=> 'Reason',
+    'created_updated_deleted_by'=> 'Created by/ Updated By / Deleted By',
+    'created_at'=> 'Created At',
+    
 
 ];

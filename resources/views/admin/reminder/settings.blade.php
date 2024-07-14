@@ -2,7 +2,7 @@
 @section('content')
 
 <?php
-	$title="Mail Settings";
+	$title= __('setting.mail_settings');
 ?>
 
 	<div class="container-fluid">
@@ -54,10 +54,10 @@
 									<div class="row">
 										<div class="col-md-8">
 											<div class="form-group">
-												<label class="control-label col-md-4">Admin Email ID's<span class="validateRq">*</span></label>
+												<label class="control-label col-md-4">@lang('setting.admin_email_id')'s<span class="validateRq">*</span></label>
 												<div class="col-md-8">
 													{!! Form::text('email_ids',Request::old('email_ids'), $attributes = array('class'=>'form-control required email_ids','id'=>'email_ids')) !!}
-													<p><small>Multiple Email ID's should be comma ( ,) seperated</small> </p>
+													<p><small>@lang('setting.multiple_email_id_should_be_comma_seperated')</small> </p>
 												</div>
 											</div>
 										</div>
@@ -65,7 +65,7 @@
 									<div class="row">
 										<div class="col-md-8">
 											<div class="form-group">
-												<label class="control-label col-md-4">Employee Document Expiry Mail Subject<span class="validateRq">*</span></label>
+												<label class="control-label col-md-4">@lang('setting.employee_document_expiry_mail_subject')<span class="validateRq">*</span></label>
 												<div class="col-md-8">
 													{!! Form::text('employeedoc_mail_subject',Request::old('employeedoc_mail_subject'), $attributes = array('class'=>'form-control required employeedoc_mail_subject','id'=>'employeedoc_mail_subject')) !!}
 													
@@ -76,7 +76,7 @@
 									<div class="row">
 										<div class="col-md-8">
 											<div class="form-group">
-												<label class="control-label col-md-4">Employee Document Expiry Admin Mail Subject<span class="validateRq">*</span></label>
+												<label class="control-label col-md-4">@lang('setting.employee_document_expiry_admin_mail_subject')<span class="validateRq">*</span></label>
 												<div class="col-md-8">
 													{!! Form::text('employeedoc_mail_admin_subject',Request::old('employeedoc_mail_admin_subject'), $attributes = array('class'=>'form-control required employeedoc_mail_admin_subject','id'=>'employeedoc_mail_admin_subject')) !!}
 													
@@ -87,7 +87,7 @@
 									<div class="row">
 										<div class="col-md-8">
 											<div class="form-group">
-												<label class="control-label col-md-4">Employee Document Expiry Mail Sender Name<span class="validateRq">*</span></label>
+												<label class="control-label col-md-4">@lang('setting.employee_document_expiry_mail_sender_name')<span class="validateRq">*</span></label>
 												<div class="col-md-8">
 													{!! Form::text('employeedoc_sender_name',Request::old('employeedoc_sender_name'), $attributes = array('class'=>'form-control required employeedoc_sender_name','id'=>'employeedoc_sender_name')) !!}
 													
@@ -98,7 +98,7 @@
 									<div class="row">
 										<div class="col-md-8">
 											<div class="form-group">
-												<label class="control-label col-md-4">Office Document Expiry Mail Subject<span class="validateRq">*</span></label>
+												<label class="control-label col-md-4">@lang('setting.office_document_expiry_mail_subject')<span class="validateRq">*</span></label>
 												<div class="col-md-8">
 													{!! Form::text('officedoc_mail_subject',Request::old('officedoc_mail_subject'), $attributes = array('class'=>'form-control required officedoc_mail_subject','id'=>'officedoc_mail_subject')) !!}
 													
@@ -109,7 +109,7 @@
 									<div class="row">
 										<div class="col-md-8">
 											<div class="form-group">
-												<label class="control-label col-md-4">Office Document Expiry Mail Sender Name<span class="validateRq">*</span></label>
+												<label class="control-label col-md-4">@lang('setting.office_document_expiry_mail_sender_name')<span class="validateRq">*</span></label>
 												<div class="col-md-8">
 													{!! Form::text('officedoc_sender_name',Request::old('officedoc_sender_name'), $attributes = array('class'=>'form-control required officedoc_sender_name','id'=>'officedoc_sender_name')) !!}
 													

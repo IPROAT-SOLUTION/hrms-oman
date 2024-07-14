@@ -82,7 +82,7 @@
                             <div class="row">
                                 <p class="border" style="margin-left:30px">
                                     <span><i class="fa fa-upload"></i></span>
-                                    <span style="margin-left: 4px"><b>Upload Document Here (.xlsx).</b></span>
+                                    <span style="margin-left: 4px"><b>@lang('payroll.import_salary_document_here')</b></span>
                                 </p>
                                 <form class="col-md-8" action="{{ route('generateSalarySheet.uploadSalarySheet') }}"
                                     method="post" enctype="multipart/form-data">
@@ -91,7 +91,7 @@
                                         class="form-control custom-file-upload col-md-8" style="width: 250px;">
                                     <button class="btn btn-success btn-sm col-md-1" style="margin: 1px 16px;width:90px"
                                         type="submit"><span><i class="fa fa-upload" aria-hidden="true"></i></span>
-                                        Upload</button>
+                                        @lang('employee.upload')</button>
                                 </form>
                                 <form class="row col-md-4 text-right"
                                     action="{{ route('generateSalarySheet.salarySheetTemplate') }}" method="get"
@@ -101,7 +101,7 @@
                                         type="submit" style="margin-top: 2px;min-width: 100px;">
                                         <i class="fa fa-download" style="margin-right: 2px;"
                                             aria-hidden="true"></i><span>
-                                            Template</span>
+                                            @lang('employee.template')</span>
                                     </button>
                                     <div class="col-md-3 form-group pull-right" style="min-width: 120px;">
                                         <input class="form-control monthField" style="height: 32px;background:#fff"
