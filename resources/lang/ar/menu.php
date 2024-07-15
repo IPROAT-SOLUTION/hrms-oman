@@ -119,13 +119,10 @@ return [
     'permission_application'           => 'Permission Application',
     'shift_application'                => 'Shift Application',
     'onduty_application'               => 'في فترة تطبيق المناوبه',
-    'shift_request'                    => 'Shift Request',
-
-    
+    'shift_request'                    => 'Shift Request',    
     'permission_report'                     => 'Permission Report',
     'onduty_report'                     => 'Onduty Report',
-    'muster_report'                   => 'Muster Report',
-   
+    'muster_report'                   => 'Muster Report',   
     'req_permission_application'         => 'Requested Permissions',
     'apply_for_onduty'         => 'Apply For OnDuty',
     'req_onduty_application'         => 'Requested OnDuties',
