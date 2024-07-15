@@ -204,12 +204,12 @@ use App\Model\Device;
                                                 :&nbsp;&nbsp;&nbsp;&nbsp;{{ $employeeInfo->email }}</div>
                                         </div>
                                         <div class="item">
-                                            <div class="col-xs-2 col-sm-2 col-md-3">Finger Print ID</div>
+                                            <div class="col-xs-2 col-sm-2 col-md-3">@lang('employee.finger_print_no')</div>
                                             <div class="col-xs-10 col-sm-10 col-md-9">
                                                 :&nbsp;&nbsp;&nbsp;&nbsp;{{ $employeeInfo->finger_id }}</div>
                                         </div>
                                         <div class="item">
-                                            <div class="col-xs-2 col-sm-2 col-md-3">HR</div>
+                                            <div class="col-xs-2 col-sm-2 col-md-3">@lang('employee.hr')</div>
                                             <div class="col-xs-10 col-sm-10 col-md-9">
                                                 :&nbsp;&nbsp;&nbsp;&nbsp;{{ $employeeInfo->supervisor->first_name ? $employeeInfo->supervisor->first_name : '' }}
                                                 {{ $employeeInfo->supervisor->last_name ? $employeeInfo->supervisor->last_name : '' }}
@@ -230,7 +230,7 @@ use App\Model\Device;
                                             </div>
                                         </div>
                                         <div class="item">
-                                            <div class="col-xs-2 col-sm-2 col-md-3">Branch</div>
+                                            <div class="col-xs-2 col-sm-2 col-md-3">@lang('common.branch')</div>
                                             <div class="col-xs-10 col-sm-10 col-md-9">
                                                 :&nbsp;&nbsp;&nbsp;&nbsp;{{ $employeeInfo->branch->branch_name }}
 
@@ -300,7 +300,7 @@ use App\Model\Device;
                                                 :&nbsp;&nbsp;&nbsp;&nbsp;{{ $employeeInfo->marital_status }}</div>
                                         </div>
                                         <div class="item">
-                                            <div class="col-xs-2 col-sm-2 col-md-3">IP Attendance</div>
+                                            <div class="col-xs-2 col-sm-2 col-md-3">@lang('employee.ip_attendance')</div>
                                             <div class="col-xs-10 col-sm-10 col-md-9">
                                                 :&nbsp;&nbsp;&nbsp;&nbsp;{{ $employeeInfo->ip_attendance == 0 ? 'No' : 'Yes' }}
                                             </div>
@@ -405,18 +405,17 @@ use App\Model\Device;
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="panel-custom">
-                                            <h3 class="panel-title"><i class="fa fa-laptop"></i> Document
-                                                Information</h3>
+                                            <h3 class="panel-title"><i class="fa fa-laptop"></i>@lang('employee.document_information') </h3>
                                         </div>
                                         <div class="box">
                                             <div class="box-body">
                                                 <table id="example1" class="table table-bordered table-hover">
                                                     <thead>
                                                         <tr>
-                                                            <th>Sl.No</th>
-                                                            <th>Document Title</th>
-                                                            <th>Document</th>
-                                                            <th>Document Expiry</th>
+                                                            <th>@lang('dashboard.s.no')</th>
+                                                            <th>@lang('employee.document_title')</th>
+                                                            <th>@lang('employee.document')</th>
+                                                            <th>@lang('employee.document_expiry')</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -442,7 +441,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             <td>
                                                                 @if (isset($employeeInfo->expiry_date8) && $employeeInfo->expiry_date8 != '0000-00-00')
@@ -474,7 +473,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             <td>
                                                                 @if (isset($employeeInfo->expiry_date9) && $employeeInfo->expiry_date9 != '0000-00-00')
@@ -505,7 +504,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             <td>
                                                                 @if (isset($employeeInfo->expiry_date10) && $employeeInfo->expiry_date10 != '0000-00-00')
@@ -536,7 +535,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             @if (isset($employeeInfo->expiry_date11) && $employeeInfo->expiry_date11 != '0000-00-00')
                                                                 {{ dateConvertDBtoForm($employeeInfo->expiry_date11) }}
@@ -566,7 +565,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             <td>
                                                                 @if (isset($employeeInfo->expiry_date16) && $employeeInfo->expiry_date16 != '0000-00-00')
@@ -597,7 +596,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             <td>
                                                                 @if (isset($employeeInfo->expiry_date17) && $employeeInfo->expiry_date17 != '0000-00-00')
@@ -628,7 +627,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             <td>
                                                                 @if (isset($employeeInfo->expiry_date18) && $employeeInfo->expiry_date18 != '0000-00-00')
@@ -659,7 +658,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             <td>
                                                                 @if (isset($employeeInfo->expiry_date19) && $employeeInfo->expiry_date19 != '0000-00-00')
@@ -690,7 +689,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             <td>
                                                                 @if (isset($employeeInfo->expiry_date20) && $employeeInfo->expiry_date20 != '0000-00-00')
@@ -721,7 +720,7 @@ use App\Model\Device;
 
                                                                 </td>
                                                             @else
-                                                                <td> <span class="text-warning">No document</span></td>
+                                                                <td> <span class="text-warning">@lang('employee.no_document')</span></td>
                                                             @endif
                                                             <td>
                                                                 @if (isset($employeeInfo->expiry_date21) && $employeeInfo->expiry_date21 != '0000-00-00')
@@ -746,17 +745,16 @@ use App\Model\Device;
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <div class="panel-custom">
-                                            <h3 class="panel-title"><i class="fa fa-laptop"></i> Document1
-                                                Information</h3>
+                                            <h3 class="panel-title"><i class="fa fa-laptop"></i> @lang('employee.document_information')</h3>
                                         </div>
                                         <div class="box">
                                             <div class="box-body">
                                                 <table id="example1" class="table table-bordered table-hover">
                                                     <thead class="education_lable">
                                                         <tr>
-                                                            <th>Document Title</th>
-                                                            <th>Document File</th>
-                                                            <th>Document Expiry</th>
+                                                            <th>@lang('employee.document_title')</th>
+                                                            <th>@lang('employee.document')</th>
+                                                            <th>@lang('employee.document_expiry')</th>
 
                                                         </tr>
                                                     </thead>
@@ -796,10 +794,10 @@ use App\Model\Device;
                                             <div class="box-body">
                                                 <table id="example1" class="table table-bordered table-hover">
                                                     <thead class="education_lable">
-                                                        <tr>
-                                                            <th>Document Title</th>
-                                                            <th>Document File</th>
-                                                            <th>Document Expiry</th>
+                                                    <tr>
+                                                            <th>@lang('employee.document_title')</th>
+                                                            <th>@lang('employee.document')</th>
+                                                            <th>@lang('employee.document_expiry')</th>
 
                                                         </tr>
                                                     </thead>
@@ -839,10 +837,10 @@ use App\Model\Device;
                                             <div class="box-body">
                                                 <table id="example1" class="table table-bordered table-hover">
                                                     <thead class="education_lable">
-                                                        <tr>
-                                                            <th>Document Title</th>
-                                                            <th>Document File</th>
-                                                            <th>Document Expiry</th>
+                                                    <tr>
+                                                            <th>@lang('employee.document_title')</th>
+                                                            <th>@lang('employee.document')</th>
+                                                            <th>@lang('employee.document_expiry')</th>
 
                                                         </tr>
                                                     </thead>
@@ -851,7 +849,7 @@ use App\Model\Device;
                                                         <tr>
                                                             <td>{{ $employeeInfo->document_title3 }}</td>
                                                             <td><a href="{{ asset('/uploads/employeeDocuments/') }}/{{ $employeeInfo->document_name3 }}"
-                                                                    download>Download File
+                                                                    download>@lang('employee.download_file')
 
                                                             </td>
                                                             <td>{{ $employeeInfo->document_expiry3 }}</td>
@@ -882,10 +880,10 @@ use App\Model\Device;
                                             <div class="box-body">
                                                 <table id="example1" class="table table-bordered table-hover">
                                                     <thead class="education_lable">
-                                                        <tr>
-                                                            <th>Document Title</th>
-                                                            <th>Document File</th>
-                                                            <th>Document Expiry</th>
+                                                    <tr>
+                                                            <th>@lang('employee.document_title')</th>
+                                                            <th>@lang('employee.document')</th>
+                                                            <th>@lang('employee.document_expiry')</th>
 
                                                         </tr>
                                                     </thead>
@@ -894,7 +892,7 @@ use App\Model\Device;
                                                         <tr>
                                                             <td>{{ $employeeInfo->document_title4 }}</td>
                                                             <td><a href="{{ asset('/uploads/employeeDocuments/') }}/{{ $employeeInfo->document_name4 }}"
-                                                                    download>Download File
+                                                                    download>@lang('employee.download_file')
 
                                                             </td>
                                                             <td>{{ $employeeInfo->document_expiry4 }}</td>
@@ -925,10 +923,10 @@ use App\Model\Device;
                                             <div class="box-body">
                                                 <table id="example1" class="table table-bordered table-hover">
                                                     <thead class="education_lable">
-                                                        <tr>
-                                                            <th>Document Title</th>
-                                                            <th>Document File</th>
-                                                            <th>Document Expiry</th>
+                                                    <tr>
+                                                            <th>@lang('employee.document_title')</th>
+                                                            <th>@lang('employee.document')</th>
+                                                            <th>@lang('employee.document_expiry')</th>
 
                                                         </tr>
                                                     </thead>
@@ -937,7 +935,7 @@ use App\Model\Device;
                                                         <tr>
                                                             <td>{{ $employeeInfo->document_title5 }}</td>
                                                             <td><a href="{{ asset('/uploads/employeeDocuments/') }}/{{ $employeeInfo->document_name5 }}"
-                                                                    download>Download File
+                                                                    download>@lang('employee.download_file')
 
                                                             </td>
                                                             <td>{{ $employeeInfo->document_expiry5 }}</td>

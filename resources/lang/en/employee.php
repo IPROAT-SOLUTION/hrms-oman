@@ -124,6 +124,16 @@ return [
     'employee_name' => 'Employee Name',
     'employee_code'=> 'Employee Code',
 
+    'document_information'=> 'Document Infordfsfmation',
+    'document_title'=> 'Document Title',
+    'document'=> 'Document',
+    'document_expiry'=> 'Document Expiry',
+    'no_document'=> 'No Document',
+    'ip_attendance'=> 'IP Attendance',
+    'download_file'=>'Download File'
+  
+
+
 
 
 

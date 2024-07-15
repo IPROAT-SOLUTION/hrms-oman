@@ -71,6 +71,15 @@ return [
     'salary_limit' => 'حد الراتب',
     'work_shift' => 'مناوبة عمل',
 
+    'work_hours' => 'Work Hour',
+    'category' => 'Employee Category',
+    'country' => 'Country',
+    'account_number' => 'Account Number',
+    'ifsc_number' => 'SWIFT Code',
+    'name_of_the_bank' => 'Name of The Bank',
+    'account_holder' => 'Account Holder',
+    'other_information' => 'Other Informations',
+
     // new added
 
     'hourly' => 'Hourly',
@@ -112,5 +121,15 @@ return [
     'upload'=> 'Upload',
     'employee_name' => 'Employee Name',
     'employee_code'=> 'Employee Code',
+
+    'document_information'=> 'Document Information',
+    'document_title'=> 'Document Title',
+    'document'=> 'Document',
+    'document_expiry'=> 'Document Expiry',
+    'no_document'=> 'No Document',
+    'ip_attendance'=> 'IP Attendance',
+   
+
+    
 
 ];
