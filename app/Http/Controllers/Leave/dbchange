@@ -1,0 +1,14 @@
+ALTER TABLE `leave_application` CHANGE `number_of_day` `number_of_day` DOUBLE(5,2) NOT NULL;
+
+
+ALTER TABLE `leave_application` ADD `document` VARCHAR(255) NULL DEFAULT NULL AFTER `manager_status`;
+
+
+ALTER TABLE `employee` ADD 'ip_attendance' INT DEFAULT 0;
+ALTER TABLE `emp_leave_balances` ADD 'branch_id' INT DEFAULT 0;
+ALTER TABLE `emp_leave_balances` ADD 'department_id' INT DEFAULT 0;
+ALTER TABLE `emp_leave_balances` ADD 'designation_id' INT DEFAULT 0;
+ALTER TABLE `emp_leave_balances` ADD 'supervisor_id' INT DEFAULT 0;
+-- ALTER TABLE `emp_leave_balances` ADD 'supervisor_id' INT DEFAULT 0;
+
+INSERT INTO `menus` (`id`, `parent_id`, `action`, `name`, `menu_url`, `module_id`, `status`) VALUES (NULL, '0', NULL, 'Leave Balance', 'leaveBalance.index', '3', '1');

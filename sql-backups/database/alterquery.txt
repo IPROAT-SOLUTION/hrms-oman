@@ -1,0 +1,586 @@
+////////////// Ramiz /////////////////
+
+ALTER TABLE `advance_deduction` ADD `advancededuction_name` VARCHAR(255) NULL AFTER `no_of_month_to_be_deducted` ;
+
+ALTER TABLE `employee` ADD `basic_salary` DOUBLE NULL AFTER `annual_leave`, ADD `increment` DOUBLE NULL AFTER `basic_salary`, ADD `housing_allowance` DOUBLE NULL AFTER `increment`, ADD `utility_allowance` DOUBLE NULL AFTER `housing_allowance`, ADD `transport_allowance` FLOAT NULL AFTER `utility_allowance`, ADD `living_allowance` DOUBLE NULL AFTER `transport_allowance`, ADD `mobile_allowance` DOUBLE NULL AFTER `living_allowance`, ADD `special_allowance` DOUBLE NULL AFTER `mobile_allowance` ;
+
+ALTER TABLE `employee` ADD `gross_salary` DOUBLE NULL AFTER `special_allowance`, ADD `social_security` DOUBLE NULL AFTER `gross_salary`, ADD `total_salary` DOUBLE NULL AFTER `social_security`, ADD `net_salary` DOUBLE NULL AFTER `total_salary`, ADD `account_number` VARCHAR(50) NULL AFTER `net_salary`, ADD `ifsc_number` VARCHAR(50) NULL AFTER `account_number`, ADD `name_of_the_bank` VARCHAR(50) NULL AFTER `ifsc_number`, ADD `account_holder` VARCHAR(50) NULL AFTER `name_of_the_bank` ;
+
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 01, 2024 at 01:08 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION                       ;
+SET time_zone = "+00:00";
+
+--
+-- Database: `db_muscat`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wpms_payroll_statement`
+--
+
+CREATE TABLE `wpms_payroll_statement` (
+`wpms_id` int(11) NOT NULL,
+`employee_id_type` text NOT NULL,
+`employee_id` text NOT NULL,
+`reference_number` text NOT NULL,
+`employee_name` text NOT NULL,
+`employee_bic` varchar(11) NOT NULL,
+`employee_account` text NOT NULL,
+`salary_frequency` varchar(1) NOT NULL,
+`number_of_working_days` int(3) NOT NULL,
+`net_salary` decimal(9,0) NOT NULL,
+`basic_salary` decimal(9,0) NOT NULL,
+`extra_hours` decimal(3,0) NOT NULL,
+`extra_income` decimal(9,0) NOT NULL,
+`deductions` decimal(9,0) NOT NULL,
+`social_security_deductions` decimal(9,0) NOT NULL,
+`notes_comments` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4             ;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `wpms_payroll_statement`
+--
+ALTER TABLE `wpms_payroll_statement`
+ADD PRIMARY KEY (`wpms_id`)                   ;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `wpms_payroll_statement`
+--
+ALTER TABLE `wpms_payroll_statement`
+MODIFY `wpms_id` int(11) NOT NULL AUTO_INCREMENT     ;
+COMMIT                                               ;
+
+INSERT INTO `menus` (`id`, `parent_id`, `action`, `name`, `menu_url`, `module_id`, `status`) VALUES (NULL, '0', NULL, 'WPMS', 'wpms.index', '5', '1');
+
+///////////// Alagesan //////////////////////////
+
+ALTER TABLE `leave_application` CHANGE `number_of_day` `number_of_day` DOUBLE(5,2) NOT NULL ;
+
+ALTER TABLE `leave_application` ADD `document` VARCHAR(255) NULL DEFAULT NULL AFTER `manager_status` ;
+
+ALTER TABLE `employee` ADD 'ip_attendance' INT DEFAULT 0            ;
+ALTER TABLE `emp_leave_balances` ADD `branch_id` INT DEFAULT 0      ;
+ALTER TABLE `emp_leave_balances` ADD `department_id` INT DEFAULT 0  ;
+ALTER TABLE `emp_leave_balances` ADD `designation_id` INT DEFAULT 0 ;
+ALTER TABLE `emp_leave_balances` ADD `supervisor_id` INT DEFAULT 0  ;
+
+-- ALTER TABLE `emp_leave_balances` ADD 'supervisor_id' INT DEFAULT 0 ;
+
+INSERT INTO `menus` (`id`, `parent_id`, `action`, `name`, `menu_url`, `module_id`, `status`) VALUES (NULL, '0', NULL, 'Leave Balance', 'leaveBalance.index', '3', '1');
+ALTER TABLE `employee` ADD `ip_attendance` TINYINT NOT NULL DEFAULT '0' AFTER `account_holder`                                                                          ;
+
+UPDATE emp_leave_balances AS elb
+JOIN employee AS emp ON elb.finger_id = emp.finger_id
+SET elb.department_id = emp.department_id,
+elb.designation_id = emp.designation_id,
+elb.branch_id = emp.branch_id                         ;
+RENAME TABLE old_table_name TO new_table_name         ;
+
+ALTER TABLE `emp_leave_balances` ADD `unpaid` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `paternity_leave` ;
+ALTER TABLE `emp_leave_balances` CHANGE `unpaid` `unpaid_leave` DECIMAL(10,2) NOT NULL DEFAULT '0.00';
+
+ALTER TABLE `salary_details` ADD `increment` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `updated_at`, ADD `housing_allowance` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `increment`, ADD `utility_allowance` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `housing_allowance`, ADD `transport_allowance` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `utility_allowance`, ADD `living_allowance` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `transport_allowance`, ADD `mobile_allowance` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `living_allowance`, ADD `special_allowance` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `mobile_allowance`, ADD `social_security` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `special_allowance`, ADD `account_number` TEXT NOT NULL AFTER `social_security`, ADD `ifsc_number` TEXT NOT NULL AFTER `account_number`, ADD `name_of_the_bank` TEXT NOT NULL AFTER `ifsc_number`, ADD `account_holder` TEXT NOT NULL AFTER `name_of_the_bank` ;
+
+ALTER TABLE `salary_details` CHANGE `basic_salary` `basic_salary` DECIMAL(9,3) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `increment` `increment` DECIMAL(10,3) NOT NULL DEFAULT '0.00';
+ALTER TABLE `salary_details` CHANGE `increment` `increment` DECIMAL(9,3) NOT NULL DEFAULT '0.000';
+ALTER TABLE `salary_details` CHANGE `housing_allowance` `housing_allowance` DECIMAL(9,3) NOT NULL DEFAULT '0.00';
+ALTER TABLE `salary_details` CHANGE `utility_allowance` `utility_allowance` DECIMAL(9,3) NOT NULL DEFAULT '0.00';
+ALTER TABLE `salary_details` CHANGE `transport_allowance` `transport_allowance` DECIMAL(9,3) NOT NULL DEFAULT '0.00';
+ALTER TABLE `salary_details` CHANGE `living_allowance` `living_allowance` DECIMAL(9,3) NOT NULL DEFAULT '0.00';
+ALTER TABLE `salary_details` CHANGE `mobile_allowance` `mobile_allowance` DECIMAL(9,3) NOT NULL DEFAULT '0.00';
+ALTER TABLE `salary_details` CHANGE `special_allowance` `special_allowance` DECIMAL(9,3) NOT NULL DEFAULT '0.00';
+ALTER TABLE `salary_details` CHANGE `social_security` `social_security` DECIMAL(9,3) NOT NULL DEFAULT '0.00';
+ALTER TABLE `salary_details` ADD `arrears_adjustment` DECIMAL(9,3) NOT NULL DEFAULT '0' AFTER `account_holder`, ADD `pay_cut` DECIMAL(9,3) NOT NULL DEFAULT '0' AFTER `arrears_adjustment`, ADD `gsm` DECIMAL(9,3) NOT NULL DEFAULT '0' AFTER `pay_cut`, ADD `prem_others` DECIMAL(9,3) NOT NULL DEFAULT '0' AFTER `gsm` ;
+ALTER TABLE `salary_details` ADD `salary_advance` DECIMAL(9,3) NOT NULL DEFAULT '0' AFTER `prem_others`                                                                                                                                                                                                                  ;
+
+ALTER TABLE `employee` ADD `prem_others` DECIMAL(9,3) NOT NULL DEFAULT '0' AFTER `updated_at`               ;
+ALTER TABLE `employee` ADD `gsm` DECIMAL(9,3) NOT NULL DEFAULT '0' AFTER `prem_others`                      ;
+ALTER TABLE `salary_details` ADD `increment_amount` DECIMAL(10,3) NOT NULL DEFAULT '0' AFTER `increment`    ;
+ALTER TABLE `salary_details` ADD `public_holiday` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `total_leave`    ;
+ALTER TABLE `salary_details` ADD `weekly_holiday` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `public_holiday` ;
+
+ALTER TABLE `employee` ADD `arrear_adjustment` DECIMAL(9,3) NOT NULL DEFAULT '0' AFTER `gsm` ;
+
+***********************added by priyanka*******************************************
+ALTER TABLE `wpms_payroll_statement` CHANGE `social_security_deductions` `social_security_deductions` DECIMAL(9,3) NOT NULL                               ;
+ALTER TABLE `wpms_payroll_statement` CHANGE `net_salary` `net_salary` DECIMAL(9,3) NOT NULL                                                               ;
+ALTER TABLE `wpms_payroll_statement` CHANGE `basic_salary` `basic_salary` DECIMAL(9,3) NOT NULL                                                           ;
+ALTER TABLE `wpms_payroll_statement` CHANGE `social_security_deductions` `social_security_deductions` DECIMAL(9,3) NOT NULL                               ;
+ALTER TABLE `wpms_payroll_statement` CHANGE `extra_hours` `extra_hours` DECIMAL(3,2) NOT NULL                                                             ;
+ALTER TABLE `wpms_payroll_statement` CHANGE `extra_income` `extra_income` DECIMAL(9,3) NOT NULL                                                           ;
+ALTER TABLE `wpms_payroll_statement` CHANGE `deductions` `deductions` DECIMAL(9,3) NOT NULL   
+ALTER TABLE `wpms_payroll_statement` ADD `document_id` text NOT NULL AFTER `deductions` ;                                                                   ;
+************************************************************************************
+INSERT INTO `menus` (`id`, `parent_id`, `action`, `name`, `menu_url`, `module_id`, `status`) VALUES (NULL, '0', NULL, 'WPMS', 'wpms.index', '5', '1');
+
+************************************************************************************
+date = 03-06-2024
+ALTER TABLE `salary_details` ADD `extra_hour` DECIMAL(3,2) NOT NULL DEFAULT '0' AFTER `salary_advance`,
+ADD `extra_amount` DECIMAL(9,3) NOT NULL DEFAULT '0' AFTER `extra_hour`;
+ALTER TABLE `salary_details` CHANGE `total_deduction` `total_deductions` INT(11) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `total_allowance` `total_allowances` INT(11) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `extra_hour` `extra_hours` DECIMAL(3,2) NOT NULL DEFAULT '0.00';
+ALTER TABLE `salary_details` CHANGE `total_deductions` `total_deduction` INT(11) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `total_deduction` `total_deductions` INT(11) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `total_allowances` `total_allowances` DECIMAL(9,3) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `total_deductions` `total_deductions` DECIMAL(9,3) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `gross_salary` `gross_salary` DECIMAL(9,3) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `total_absence_amount` `total_absence_amount` DECIMAL(9,3) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `total_late_amount` `total_late_amount` DECIMAL(9,3) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `total_overtime_amount` `total_overtime_amount` DECIMAL(9,3) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `per_day_salary` `per_day_salary` DECIMAL(9,3) NOT NULL DEFAULT '0';
+ALTER TABLE `salary_details` CHANGE `net_salary` `net_salary` DECIMAL(9,3) NOT NULL DEFAULT '0';
+ALTER TABLE `leave_type` ADD `status` INT NOT NULL DEFAULT '1' AFTER `branch_id`;
+
+ALTER TABLE `emp_leave_balances` DROP `supervisor_id` ;
+ALTER TABLE `emp_leave_balances`
+DROP `comp_leave`,
+DROP `accom_leave`,
+DROP `hajj_leave`,
+DROP `maternity_leave`,
+DROP `annual_leave`,
+DROP `sick_leave`,
+DROP `mrg_leave`,
+DROP `exam_leave`,
+DROP `emergency_leave`,
+DROP `paternity_leave`,
+DROP `unpaid_leave`;
+
+ALTER TABLE `emp_leave_balances` ADD `leave_type_id` BIGINT NOT NULL AFTER `finger_id`, ADD `leave_balance` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `leave_type_id` ;
+
+ALTER TABLE `leave_application` ADD `created_by` INT(11) NULL AFTER `updated_at`;
+
+ALTER TABLE `employee` CHANGE `transport_allowance` `transport_allowance` DOUBLE NULL DEFAULT NULL;
+ALTER TABLE `employee` CHANGE `prem_others` `prem_others` DOUBLE NOT NULL DEFAULT '0';
+
+////////Social Security //////////////
+
+
+ALTER TABLE `leave_type`  ADD `status` INT NOT NULL DEFAULT '1'  AFTER `branch_id`;
+
+
+
+
+06-03-2024
+--------------------------------------------------
+ALTER TABLE `emp_leave_balances` DROP `supervisor_id`;
+ALTER TABLE `emp_leave_balances`
+  DROP `comp_leave`,
+  DROP `accom_leave`,
+  DROP `hajj_leave`,
+  DROP `maternity_leave`,
+  DROP `annual_leave`,
+  DROP `sick_leave`,
+  DROP `mrg_leave`,
+  DROP `exam_leave`,
+  DROP `emergency_leave`,
+  DROP `paternity_leave`,
+  DROP `unpaid_leave`;
+
+  
+ALTER TABLE `emp_leave_balances`  ADD `leave_type_id` BIGINT NOT NULL  AFTER `finger_id`,  ADD `leave_balance` DECIMAL(10,2) NOT NULL DEFAULT '0'  AFTER `leave_type_id`;
+----------------------------------------------production query------------------------------------------------------
+
+INSERT INTO `menus` (`id`, `parent_id`, `action`, `name`, `menu_url`, `module_id`, `status`) VALUES (NULL, '0', NULL, 'Social Security', 'socialSecurity.index', '5', '1');
+
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+CREATE TABLE `social_security` (
+  `social_security_id` int(11) NOT NULL,
+  `year` year(4) NOT NULL,
+  `nationality` tinyint(4) NOT NULL COMMENT '0-Omanis,1-Expats',
+  `percentage` decimal(9,3) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+ALTER TABLE `social_security`
+  ADD PRIMARY KEY (`social_security_id`);
+
+ALTER TABLE `social_security`
+  MODIFY `social_security_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+
+ALTER TABLE `salary_details` ADD `branch_id` INT(11) NULL DEFAULT NULL AFTER `employee_id`;
+ALTER TABLE `social_security` ADD `gross_salary` DECIMAL(9,3) NULL AFTER `social_security_id`;
+ALTER TABLE `emp_leave_balances` ADD `leave_type_id` BIGINT NOT NULL AFTER `finger_id`, ADD `leave_balance` DECIMAL(10,2) NOT NULL DEFAULT '0' AFTER `leave_type_id` ;
+ALTER TABLE `employee` ADD `gsm` DOUBLE NULL AFTER `account_holder`, ADD `arrears` DOUBLE NULL AFTER `gsm`;
+ALTER TABLE `employee` ADD `prem_others` DOUBLE NULL AFTER `arrears`;
+
+ALTER TABLE `advance_deduction` CHANGE `advance_amount` `advance_amount` DECIMAL(10, 2) NOT NULL,
+    CHANGE `deduction_amouth_per_month` `deduction_amouth_per_month` DECIMAL(10, 2) NOT NULL;
+    
+ALTER TABLE `leave_application` ADD `created_by` INT(11) NULL AFTER `updated_at`;
+
+ALTER TABLE `leave_type` ADD `status` INT NOT NULL DEFAULT '1' AFTER `branch_id`;
+
+
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 10, 2024 at 10:38 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `muscat_insurance`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salary_details`
+--
+DROP TABLE `salary_details`;
+CREATE TABLE `salary_details` (
+  `salary_details_id` int(10) UNSIGNED NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `branch_id` int(11) DEFAULT NULL,
+  `month_of_salary` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `basic_salary` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `total_allowances` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `total_deductions` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `total_late` int(11) NOT NULL DEFAULT 0,
+  `total_late_amount` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `total_absence` int(11) NOT NULL DEFAULT 0,
+  `total_absence_amount` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `overtime_rate` int(11) NOT NULL DEFAULT 0,
+  `per_day_salary` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `total_over_time_hour` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '00:00',
+  `total_overtime_amount` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `hourly_rate` int(11) NOT NULL DEFAULT 0,
+  `total_present` int(11) NOT NULL DEFAULT 0,
+  `total_leave` int(11) NOT NULL DEFAULT 0,
+  `public_holiday` decimal(10,2) NOT NULL DEFAULT 0.00,
+  `weekly_holiday` decimal(10,2) NOT NULL DEFAULT 0.00,
+  `total_working_days` int(11) NOT NULL DEFAULT 0,
+  `net_salary` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `tax` int(11) NOT NULL DEFAULT 0,
+  `taxable_salary` int(11) NOT NULL DEFAULT 0,
+  `working_hour` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '00:00',
+  `gross_salary` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `created_by` int(11) NOT NULL,
+  `updated_by` int(11) NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `comment` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `payment_method` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `action` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `increment` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `increment_amount` decimal(10,3) NOT NULL DEFAULT 0.000,
+  `housing_allowance` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `utility_allowance` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `transport_allowance` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `living_allowance` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `mobile_allowance` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `special_allowance` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `social_security` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `account_number` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ifsc_number` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name_of_the_bank` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `account_holder` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `arrears_adjustment` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `pay_cut` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `gsm` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `prem_others` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `salary_advance` decimal(9,3) NOT NULL DEFAULT 0.000,
+  `extra_hours` decimal(3,2) NOT NULL DEFAULT 0.00,
+  `extra_amount` decimal(9,3) NOT NULL DEFAULT 0.000
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `salary_details`
+--
+
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `salary_details`
+--
+ALTER TABLE `salary_details`
+  ADD PRIMARY KEY (`salary_details_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `salary_details`
+--
+ALTER TABLE `salary_details`
+  MODIFY `salary_details_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 10, 2024 at 10:42 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `muscat_insurance`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wpms_payroll_statement`
+--
+DROP TABLE `wpms_payroll_statement`;
+CREATE TABLE `wpms_payroll_statement` (
+  `wpms_id` int(11) NOT NULL,
+  `employee_id_type` text NOT NULL,
+  `employee_id` text NOT NULL,
+  `reference_number` text NOT NULL,
+  `employee_name` text NOT NULL,
+  `employee_bic` varchar(11) NOT NULL,
+  `employee_account` text NOT NULL,
+  `salary_frequency` varchar(1) NOT NULL,
+  `number_of_working_days` int(11) NOT NULL,
+  `net_salary` decimal(9,3) NOT NULL,
+  `basic_salary` decimal(9,3) NOT NULL,
+  `extra_hours` decimal(3,2) NOT NULL,
+  `extra_income` decimal(9,3) NOT NULL,
+  `deductions` decimal(9,3) NOT NULL,
+  `document_id` text NOT NULL,
+  `social_security_deductions` decimal(9,3) NOT NULL,
+  `notes_comments` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+COMMIT;
+
+
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 10, 2024 at 01:29 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `muscat_insurance`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee_increments`
+--
+
+CREATE TABLE `employee_increments` (
+  `employee_increment_id` int(10) UNSIGNED NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `year` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `basic_salary` decimal(10,3) NOT NULL DEFAULT 0.000,
+  `increment_percentage` decimal(10,3) NOT NULL DEFAULT 0.000,
+  `increment_amount` decimal(10,3) NOT NULL DEFAULT 0.000,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `employee_increments`
+--
+
+INSERT INTO `employee_increments` (`employee_increment_id`, `employee_id`, `year`, `basic_salary`, `increment_percentage`, `increment_amount`, `created_at`, `updated_at`) VALUES
+(1, 1559, '2024', '1000.000', '100.000', '1000.000', '2024-03-05 20:14:41', '2024-03-10 12:54:15'),
+(2, 1562, '2024', '100.000', '100.000', '100.000', '2024-03-09 20:56:02', '2024-03-09 20:56:02'),
+(3, 1657, '2024', '100.000', '100.000', '100.000', '2024-03-09 20:56:31', '2024-03-09 20:56:31');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `employee_increments`
+--
+ALTER TABLE `employee_increments`
+  ADD PRIMARY KEY (`employee_increment_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `employee_increments`
+--
+ALTER TABLE `employee_increments`
+  MODIFY `employee_increment_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 10, 2024 at 01:32 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `muscat_insurance`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `advance_deduction`
+--
+DROP TABLE `advance_deduction`;
+CREATE TABLE `advance_deduction` (
+  `advance_deduction_id` int(10) UNSIGNED NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `advance_amount` decimal(10,2) NOT NULL,
+  `date_of_advance_given` date COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deduction_amouth_per_month` decimal(10,2) NOT NULL,
+  `no_of_month_to_be_deducted` int(11) NOT NULL,
+  `advancededuction_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `advance_deduction`
+--
+
+INSERT INTO `advance_deduction` (`advance_deduction_id`, `employee_id`, `advance_amount`, `date_of_advance_given`, `deduction_amouth_per_month`, `no_of_month_to_be_deducted`, `advancededuction_name`, `status`, `created_at`, `updated_at`) VALUES
+(4, 1559, '12000.00', '2024-03-02', '1000.00', 12, 'Test', 1, '2024-03-02 08:59:34', '2024-03-05 03:41:51');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `advance_deduction`
+--
+ALTER TABLE `advance_deduction`
+  ADD PRIMARY KEY (`advance_deduction_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `advance_deduction`
+--
+ALTER TABLE `advance_deduction`
+  MODIFY `advance_deduction_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+ALTER TABLE `employee` CHANGE `prem_others` `prem_others` DOUBLE NULL DEFAULT '0';
+ALTER TABLE `employee` CHANGE `prem_others` `prem_others` DECIMAL(9,3) NULL DEFAULT '0';
+ALTER TABLE `employee`
+DROP `gsm`,
+DROP `social_security`,
+DROP `gross_salary`;
+DROP `total_salary`;
+
+ALTER TABLE `employee_increments` ADD `basic_amount` DECIMAL(9,3) NOT NULL DEFAULT '0.000' AFTER `basic_salary`;
+
+
+
+
+///emoloyee table
+UPDATE employee SET expiry_date8 = NULL WHERE expiry_date8 = '1970-01-01';
+UPDATE employee SET expiry_date9 = NULL WHERE expiry_date9 = '1970-01-01';
+UPDATE employee SET expiry_date10 = NULL WHERE expiry_date10 = '1970-01-01';
+UPDATE employee SET expiry_date11 = NULL WHERE expiry_date11 = '1970-01-01';
+UPDATE employee SET expiry_date16 = NULL WHERE expiry_date16 = '1970-01-01';
+UPDATE employee SET expiry_date17 = NULL WHERE expiry_date17 = '1970-01-01';
+UPDATE employee SET expiry_date18 = NULL WHERE expiry_date18 = '1970-01-01';
+UPDATE employee SET expiry_date19 = NULL WHERE expiry_date19 = '1970-01-01';
+UPDATE employee SET expiry_date20 = NULL WHERE expiry_date20 = '1970-01-01';
+UPDATE employee SET expiry_date21 = NULL WHERE expiry_date21 = '1970-01-01';
+
+
+ALTER TABLE employee CHANGE document_file16 document_name16 TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+
+ALTER TABLE employee CHANGE document_file17 document_name17 TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+
+ALTER TABLE employee CHANGE document_file18 document_name18 TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE document_file20 document_name20 TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+
+ALTER TABLE employee CHANGE document_file21 document_name21 TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE document_file19 document_name19 TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL;
+
+
+ALTER TABLE `leave_application` ADD `manager_remarks` TEXT NULL AFTER `remarks`;
+ALTER TABLE `leave_permission` ADD `manager_remarks` TEXT NULL AFTER `remarks`;
+ALTER TABLE `advance_deduction` ADD `remaining_month` INT NULL DEFAULT NULL AFTER `no_of_month_to_be_deducted`;
+
+
+
+// 2024-04-14
+ALTER TABLE employee CHANGE housing_allowance housing_allowance DECIMAL(10,3) NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE utility_allowance utility_allowance DECIMAL(10,3) NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE transport_allowance transport_allowance DECIMAL(10,3) NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE living_allowance living_allowance DECIMAL(10,3) NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE mobile_allowance mobile_allowance DECIMAL(10,3) NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE special_allowance special_allowance DECIMAL(10,3) NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE gross_salary gross_salary DECIMAL(10,3) NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE basic_salary basic_salary DECIMAL(10,3) NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE total_salary total_salary DECIMAL(10,3) NULL DEFAULT NULL;
+ALTER TABLE employee CHANGE increment increment DECIMAL(10,2) NULL DEFAULT NULL;
+
+ALTER TABLE advance_deduction CHANGE advance_amount advance_amount DECIMAL(10,3) NOT NULL;
+ALTER TABLE advance_deduction CHANGE deduction_amouth_per_month deduction_amouth_per_month DECIMAL(10,3) NOT NULL;
